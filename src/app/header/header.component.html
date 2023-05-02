@@ -1,10 +1,10 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="https://emoji.gg/assets/emoji/1946_anemo.png
-                " alt="" width="30" height="24">
-            </a>
-        <a class="navbar-brand" href="#">A.IOT</a>
+        <a class="navbar-brand" href="#">
+            <img [src]="StoreLogo" width="30" height="24">
+
+        </a>
+        <a class="navbar-brand" href="#">{{ StoreName|uppercase }}</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
             aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -22,10 +22,17 @@
                 </li>
 
             </ul>
-            <form class="d-flex" role="search">
+            <form class="d-flex  pe-4" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
+            <!-- <ul class="navbar-nav ">
+
+                <li class="nav-item">
+                    <a class="nav-link btn btn-primary" href="#">Login</a>
+                </li>
+
+            </ul> -->
         </div>
     </div>
 </nav>

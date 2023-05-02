@@ -8,4 +8,7 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
   homename: string = "home";
   textId: string = "myId"
+
+  StoreName: string = "A.IOT";
+  StoreLogo: string = "https://cdn3.emoji.gg/emojis/1946_anemo.png";
 }

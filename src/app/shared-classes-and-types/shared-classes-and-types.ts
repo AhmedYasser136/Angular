@@ -6,7 +6,6 @@ export interface IProduct {
     Name: string;
     Quantity: number;
     Price: number;
-    Img: string;
   }
   
   // ICategory interface
@@ -17,8 +16,7 @@ export interface IProduct {
   
   // DiscountOffers enum
   export enum DiscountOffers {
-    "No Discount",
-    "10%",
-    "15%"
-  }
-  
+    No_Discounts = 0 ,
+    tenPercent = 0.1,
+    fiftenPercent = 0.15
+}
