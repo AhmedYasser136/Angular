@@ -1,35 +1,40 @@
-import { Component } from '@angular/core';
-import { DiscountOffers, IProduct, ICategory } from '../shared-classes-and-types/shared-classes-and-types';
+import { Component, OnInit } from '@angular/core';
+import {
+  DiscountOffers,
+  IProduct,
+  ICategory,
+} from '../shared-classes-and-types/shared-classes-and-types';
+import { ProductServiceService } from '../services/product-service.service';
 
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
-  styleUrls: ['./product.component.scss']
+  styleUrls: ['./product.component.scss'],
 })
 export class ProductComponent {
-
   // discount: DiscountOffers = DiscountOffers.No_Discounts;
   discount: DiscountOffers = DiscountOffers.tenPercent;
-
-
-  ProductList: IProduct[] = [
-    { ID: 1, Name: "Raspberry Pi Pico", Quantity: 10, Price: 100 },
-    { ID: 2, Name: "TFT LCD", Quantity: 5, Price: 50 },
-    { ID: 3, Name: "Hot Air", Quantity: 3, Price: 20 },
-  ];
-
-
-
+  ProductList: any = [];
   categories = ['LCD', 'Motor', 'Sensor'];
-
   isPurchased = false;
-  Client: string = "";
+  Client: string = '';
+  constructor(private productService: ProductServiceService) { }
 
   buy() {
     this.isPurchased = true;
-    this.Client = this.Client; 
+    this.Client = this.Client;
   }
 
-  // ClientName: string = "Ahmed Yasser";
-  // IsPurchased: boolean = false;
+
+  ngOnInit(): void {
+    this.ProductList = this.productService.GetAllProducts();
+    this.renderValues();
+
+  }
+  renderValues(): void {
+    this.productService.GetAllProducts().subscribe(
+      (data: any) => {
+      this.ProductList = data;
+    });
+  }
 }

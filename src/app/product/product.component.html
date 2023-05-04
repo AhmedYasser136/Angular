@@ -56,11 +56,11 @@
 </div>
 
 
-
-<input [(ngModel)]="Client" placeholder="Enter your name" class="rounded-pill  border border-primary" #txtInput >
-
+<span *ngIf="!isPurchased">
+    <input [(ngModel)]="Client" placeholder="Enter your name" class="rounded-pill  border border-primary" >Hi {{Client}}
+</span>
 <div *ngIf="isPurchased">
-    Thanks {{txtInput.value}} for purchasing from our Store
+    Thanks {{Client}} for purchasing from our Store
 </div>
 
 
@@ -131,49 +131,7 @@
         </div>
     </div>
 </div>
-<div class="row row-cols-1 row-cols-md-3 g-4 m-auto">
-    <div class="col">
-        <div class="card h-100">
-            <img src="https://lampatronics.com/wp-content/uploads/2022/04/rpi_pico.jpg" class="card-img-top"
-                alt="..." />
-            <div class="card-body">
-                <h5 class="card-title">Raspberry Pi Pico</h5>
-                <p class="card-text">Raspberry Pi Pico (RP2040)</p>
-            </div>
-            <div class="card-footer d-flex justify-content-center  ">
-                <button type="button" class="btn btn-primary ps-4 pe-4">Buy</button>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card h-100">
-            <img src="https://lampatronics.com/wp-content/uploads/2022/06/3-2-Inch-3-2-Color-TFT-LCD-Touch-Screen-Display-Module-Ultra-HD-320X240-ILI9341.jpg_Q90.jpg_-600x600.png"
-                class="card-img-top" alt="..." />
-            <div class="card-body">
-                <h5 class="card-title">TFT LCD</h5>
-                <p class="card-text">TFT LCD Touch Panel 3.2 inch 320×240 ( ILI9341)</p>
-            </div>
-            <div class="card-footer d-flex justify-content-center  ">
-                <button type="button" class="btn btn-primary ps-4 pe-4">Buy</button>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card h-100">
-            <img src="https://lampatronics.com/wp-content/uploads/2022/02/H04ba3668d1014be99a7f017f7e9d205c9-600x600.jpg"
-                class="card-img-top" alt="..." />
-            <div class="card-body">
-                <h5 class="card-title">Hot Air</h5>
-                <p class="card-text">
-                    Hot Air & Soldering Station 878D Digital Control SMD ESD
-                </p>
-            </div>
-            <div class="card-footer d-flex justify-content-center  ">
-                <button type="button" class="btn btn-primary ps-4 pe-4">Buy</button>
-            </div>
-        </div>
-    </div>
-</div>
+
 
 
 <br>

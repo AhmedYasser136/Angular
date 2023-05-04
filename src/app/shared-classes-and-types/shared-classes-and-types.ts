@@ -6,6 +6,7 @@ export interface IProduct {
     Name: string;
     Quantity: number;
     Price: number;
+    Img: string;
   }
   
   // ICategory interface
